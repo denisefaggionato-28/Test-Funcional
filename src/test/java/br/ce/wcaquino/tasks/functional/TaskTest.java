@@ -34,7 +34,6 @@ public class TaskTest {
 		}finally {
 			driver.quit();	
 		}
-		
 	}
 	@Test
 	public void naoDeveSalvarTarefaComDataPassada() throws MalformedURLException {
@@ -47,8 +46,7 @@ public class TaskTest {
 		Assert.assertEquals("Due date must not be in past",text);
 		}finally {
 			driver.quit();	
-		}
-		
+		}		
 	}
 	@Test
 	public void naoDeveSalvarTarefaSemDescricao() throws MalformedURLException {
@@ -58,9 +56,9 @@ public class TaskTest {
 		driver.findElement(By.id("saveButton")).click();
 		String text = driver.findElement(By.id("message")).getText();
 		Assert.assertEquals("Fill the task description",text);
-	}finally {
-		driver.quit();	
-	}	
+		}finally {
+			driver.quit();	
+		}	
 	}
 	@Test
 	public void naoDeveSalvarTarefaSemData() throws MalformedURLException {
